@@ -1,4 +1,7 @@
-package ua.skillsup.practice;
+package ua.skillsup.practice.dao;
+
+import ua.skillsup.practice.entity.ExampleEntity;
+import ua.skillsup.practice.ExampleNetworkException;
 
 import java.util.List;
 

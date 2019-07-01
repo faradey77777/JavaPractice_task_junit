@@ -1,4 +1,7 @@
-package ua.skillsup.practice;
+package ua.skillsup.practice.service;
+
+import ua.skillsup.practice.dao.ExampleDao;
+import ua.skillsup.practice.entity.ExampleEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,7 +20,7 @@ public interface ExampleService {
 	 * @param price the price of an item, in case of scale mre than 3 should be rounded 2 decimal points
 	 *              with half up rule, lowest limit is at 15.00, mandatory field
 	 */
-	void addNewItem(String title, BigDecimal price);
+	void addNewItem(String title, BigDecimal price) throws Exception;
 
 	/**
 	 * Prepare storage statistic of items average prices per day they were added.
