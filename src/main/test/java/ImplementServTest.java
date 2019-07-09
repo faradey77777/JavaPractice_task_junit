@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 public class ImplementServTest {
     private ExampleDao exampleDao = Mockito.mock(ExampleDao.class);
     private ImplementServ implementServ =  new ImplementServ(exampleDao);
+
     @Test
     public void test_save_examentity_into_store(String title, BigDecimal price) throws Exception {
         //Given

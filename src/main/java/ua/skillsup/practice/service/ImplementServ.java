@@ -34,14 +34,10 @@ public class ImplementServ implements ExampleService {
 
     @Override
     public void addNewItem(String title, BigDecimal price) throws Exception {
-
-        if (title.length() < 3 && title.length() > 20) {
-            throw new Exception("Title must be contains 3-20");
-        }
-        if (price.scale() == 3) {
-            price.setScale(0, BigDecimal.ROUND_HALF_UP);
-        }
-
+        Validation validation = new Validation(exampleDao);
+        validation.valTitle(title);
+        validation.valConect(storeExam);
+        validation.valPrice(price);
 
         Instant instant = Instant.now();
         ExampleEntity entity = new ExampleEntity();
@@ -49,10 +45,6 @@ public class ImplementServ implements ExampleService {
         entity.setPrice(price);
 
         storeExam = exampleDao.store(entity);
-
-        if (storeExam == false) {
-            throw new Exception("Error connecting to the repository or double");
-        }
 
     }
 
