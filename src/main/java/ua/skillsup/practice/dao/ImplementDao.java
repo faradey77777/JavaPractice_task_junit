@@ -22,13 +22,19 @@ public class ImplementDao implements ExampleDao {
         } catch (ExampleNetworkException e) {
             System.out.println("Error connect to store");
         }
+
         return false;
     }
 
 
+
     @Override
     public List<ExampleEntity> findAll() throws ExampleNetworkException {
-        return exampleEntities;
+        if (!exampleEntities.isEmpty()) {
+            return exampleEntities;
+        }
+        else throw new ExampleNetworkException();
+
 
 
     }

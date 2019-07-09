@@ -14,7 +14,6 @@ import java.time.Instant;
 public class ImplementServ implements ExampleService {
     private boolean storeExam;
     private ExampleDao exampleDao;
-    private ExampleEntity exampleEntity;
     private long id = 0;
 
     public ImplementServ(ExampleDao exampleDao) {
